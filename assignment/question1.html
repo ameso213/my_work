@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a html form with Email, Name and Password elements</title>
+</head>
+
+<body>
+    <form id="form1" onsubmit=" return ValidateForm()">
+        Email: <input type="email" name="email"><br>
+        Name: <input type="text" name="name"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+<script>
+    function ValidateForm() {
+        var email = document.getElementsByName("email")[0];
+        var name = document.getElementsByName("name")[0];
+        var password = document.getElementsByName("password")[0];
+
+        if (email.value === '' || name.value === '' || password.value === '') {
+            alert("Please fill all the values");
+        }
+    }
+</script>
+
+</html>

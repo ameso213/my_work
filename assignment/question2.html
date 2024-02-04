@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A form with a numeric input and validate if the input value is not a number</title>
+</head>
+
+<body>
+
+    <form id="numberForm" onsubmit=" return validateForm()">
+        Enter a Number: <input type="number" name="numericinput">
+        <div name="errormessage" style="color: red;"></div>
+        <input type="submit" value="Submit">
+    </form>
+
+
+</body>
+    <script>
+        function validateForm() {
+            var numericinput = document.getElementsByName("numericinput")[0];
+            var errormessage = document.getElementsByName("errormessage")[0];
+
+            if (isNaN(numericinput.value) || numericinput.value === '') {
+                errormessage.textContent = "Please enter a valid number.";
+                return false;
+            }
+        }
+    </script>
+
+</html>
